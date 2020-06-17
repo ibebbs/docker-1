@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2.105-bionic
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-bionic
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | tee /etc/apt/sources.list.d/mono-official-stable.list
 RUN apt-get update
@@ -22,10 +22,13 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - && \
 RUN git clone https://github.com/juj/emsdk.git && \
 	sudo chmod 777 /emsdk && \
     cd emsdk && \
-    ./emsdk install sdk-1.38.28-64bit && \
-    ./emsdk install sdk-1.38.30-64bit && \
-    ./emsdk install sdk-1.38.31-64bit && \
+    #./emsdk list && \
+    #./emsdk install sdk-1.38.28-64bit && \
+    #./emsdk install sdk-1.38.30-64bit && \
+    #./emsdk install sdk-1.38.31-64bit && \
+    ./emsdk install sdk-1.38.33-64bit && \
     ./emsdk install sdk-1.38.34-64bit && \
     ./emsdk install latest && \
-    ./emsdk activate sdk-1.38.31-64bit && \
+    # ./emsdk activate sdk-1.38.31-64bit && \
+    ./emsdk activate sdk-1.38.33-64bit && \
     sudo chmod -R 777 /emsdk
