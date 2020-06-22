@@ -1,9 +1,9 @@
 types {
   text/html                             html htm shtml;
   text/css                              css;
-  text/javascript						js;
+  text/javascript						            js;
+  application/wasm                      wasm;
   application/octet-stream              dll clr;
   application/json                      json;
-  application/wasm                      wasm;
   application/font-woff                 woff woff2;
 }
